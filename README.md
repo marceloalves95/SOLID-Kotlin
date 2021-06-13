@@ -97,7 +97,7 @@ class ModeloCorreto {
 
 > Princípio do Aberto-Fechado — ***Você deve ser capaz de estender um comportamento de uma classe sem a necessidade de modificá-lo***.
 
-![]()
+![](src/imagens/OCP.png)
 
 ```kotlin
 class ModeloErrado {
@@ -166,7 +166,7 @@ class ModeloCorreto {
 
 > Princípio da Substituição de Liskov — ***As classes derivadas devem ser substituíveis por suas classes bases***.
 
-![]()
+![](src/imagens/LSP.png)
 
 ```kotlin
 class ModeloErrado {
@@ -211,7 +211,7 @@ class ModeloCorreto {
 
 > Princípio da Segregação de Interfaces — ***Muitas interfaces específicas são melhores do que uma interface única geral***.
 
-![]()
+![](src/imagens/ISP.png)
 
 ```kotlin
 class ModeloErrado {
@@ -252,7 +252,7 @@ class ModeloCorreto {
 
 > Princípio da Inversão de Dependência — ***Dependa de abstrações e não de implementações***.
 
-![]()
+![](src/imagens/DIP.png)
 
 ```kotlin
 class ModeloErrado {

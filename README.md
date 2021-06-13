@@ -31,6 +31,8 @@ Projeto de estudo baseado nos principais conceitos sobre o SOLID.
 
 > Princípio da Responsabilidade Única — ***Uma classe deve ter um, e somente um, motivo para mudar***.
 
+![](src/imagens/SRP.png)
+
 Esse princípio declara que uma classe deve ser especializada em um único assunto e possuir apenas uma responsabilidade dentro do software, ou seja, a classe deve ter uma única tarefa ou ação para executar.
 
 Indo um pouco mais fundo, podemos dizer que para o sistema esteja de acordo com esse princípio, cada responsabilidade deve ser uma classe e cada classe deve ter uma única responsabilidade.
@@ -94,6 +96,8 @@ class ModeloCorreto {
 ## Open-Closed Principle 
 
 > Princípio do Aberto-Fechado — ***Você deve ser capaz de estender um comportamento de uma classe sem a necessidade de modificá-lo***.
+
+![]()
 
 ```kotlin
 class ModeloErrado {
@@ -162,6 +166,8 @@ class ModeloCorreto {
 
 > Princípio da Substituição de Liskov — ***As classes derivadas devem ser substituíveis por suas classes bases***.
 
+![]()
+
 ```kotlin
 class ModeloErrado {
 
@@ -205,6 +211,8 @@ class ModeloCorreto {
 
 > Princípio da Segregação de Interfaces — ***Muitas interfaces específicas são melhores do que uma interface única geral***.
 
+![]()
+
 ```kotlin
 class ModeloErrado {
 
@@ -243,6 +251,8 @@ class ModeloCorreto {
 ## Dependency Inversion Principle
 
 > Princípio da Inversão de Dependência — ***Dependa de abstrações e não de implementações***.
+
+![]()
 
 ```kotlin
 class ModeloErrado {

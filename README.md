@@ -31,6 +31,40 @@ Projeto de estudo baseado nos principais conceitos sobre o SOLID.
 
 > Princípio da Responsabilidade Única — ***Uma classe deve ter um, e somente um, motivo para mudar***.
 
+Esse princípio declara que uma classe deve ser especializada em um único assunto e possuir apenas uma responsabilidade dentro do software, ou seja, a classe deve ter uma única tarefa ou ação para executar.
+
+Indo um pouco mais fundo, podemos dizer que para o sistema esteja de acordo com esse princípio, cada responsabilidade deve ser uma classe e cada classe deve ter uma única responsabilidade.
+
+**Veja um exemplo:**
+
+```kotlin
+class ModoErrado {
+
+    class Pedido{
+        
+        //Informações do Pedido
+        fun calculateTotalSum(){/*...*/}
+        fun getItems(){/*...*/}
+        fun getItemCount(){/*...*/}
+        fun addItem(item:String){/*...*/}
+        fun deleteItem(){/*...*/}
+
+        //Exibição do Pedido
+        fun printOrder(){/*...*/}
+        fun showOrder(){/*...*/}
+
+        //Manipulação do Pedido
+        fun load(){/*...*/}
+        fun save(){/*...*/}
+        fun update(){/*...*/}
+        fun delete(){/*...*/}
+    }
+    
+}
+```
+
+A classe *Pedido* viola o Single Responsiblity Principle (SRP) porque realiza 3 tipos distintos de tarefas. Além de lidar com as informações do pedido, ela também é responsável pela exibição e manipulação dos dados. Lembre-se, o princípio da responsabilidade única preza que *uma classe deve ter um, e somente um, motivo para mudar***.**
+
 ## Open-Closed Principle 
 
 > Princípio do Aberto-Fechado — ***Você deve ser capaz de estender um comportamento de uma classe sem a necessidade de modificá-lo***.

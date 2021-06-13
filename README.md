@@ -1,15 +1,15 @@
 # SOLID-Kotlin
 Projeto de estudo baseado nos principais conceitos sobre o SOLID.
 
-##### O que é o SOLID?
+###### O que é o SOLID?
 
 > O SOLID são cinco princípios da programação orientada a objetos que facilitam no desenvolvimento de softwares, tornando-os fáceis de manter e estender. Esses princípios podem ser aplicados a qualquer linguagem de POO.
 
-##### Por que é tão importante aprender esses conceitos?
+###### Por que é tão importante aprender esses conceitos?
 
 É importante porque esses princípios são a base para vários Padrões e Projetos e tornam softwares mais evolutivos, de fácil manutenção e facilita mudanças necessárias após a finalização do projeto, não impactando em outras áreas do programa. De fato, podemos afirmar que um software que não segue tais princípios é um software mal escrito e de má qualidade. 
 
-##### Os princípios do SOLID
+###### Os princípios do SOLID
 
 - [ ] S **— Single Responsiblity Principle** (Princípio da Responsabilidade Única)
 - [ ] O **— Open-Closed Principle** (Princípio Aberto-Fechado)
@@ -17,7 +17,7 @@ Projeto de estudo baseado nos principais conceitos sobre o SOLID.
 - [ ] I **— Interface Segregation Principle** (Princípio da Segregação da Interface)
 - [ ] D **— Dependency Inversion Principle** (Princípio da Inversão da Dependência)
 
-##### O que você deve ou não fazer
+###### O que você deve ou não fazer
 
 | **Princípios** | **O que você NÃO deve fazer**🚫 | **O que você DEVE fazer**✅ |
 | :------------: | :----------------------------: | :------------------------: |

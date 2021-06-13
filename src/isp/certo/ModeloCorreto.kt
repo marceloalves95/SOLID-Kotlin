@@ -4,7 +4,7 @@ package isp.certo
  * @author RubioAlves
  * Created 13/06/2021 at 12:59
  */
-class IspCerto {
+class ModeloCorreto {
 
     interface Aves{/*...*/}
     interface AvesQueVoam:Aves{

@@ -4,7 +4,7 @@ package lsp.certo
  * @author RubioAlves
  * Created 13/06/2021 at 12:11
  */
-class LspCerto {
+class ModeloCorreto {
 
     open class Passaro{/*...*/}
     open class PassarosVoadores : Passaro() {
@@ -15,4 +15,5 @@ class LspCerto {
         override fun voar(){/*...*/}
     }
     class Avestruz : Passaro()
+
 }

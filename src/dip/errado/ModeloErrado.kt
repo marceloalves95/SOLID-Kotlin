@@ -4,7 +4,7 @@ package dip.errado
  * @author RubioAlves
  * Created 13/06/2021 at 13:20
  */
-class DipErrado {
+class ModeloErrado {
 
     /*
     No exemplo, podemos perceber que além de quebrar outros princípios do SOLID,

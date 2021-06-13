@@ -4,7 +4,7 @@ package isp.errado
  * @author RubioAlves
  * Created 13/06/2021 at 12:59
  */
-class IspErrado {
+class ModeloErrado {
 
     interface Aves{
         fun voar()
@@ -22,6 +22,5 @@ class IspErrado {
     class Pinguim:Aves{
         override fun voar(){/*...*/}
     }
-
 
 }

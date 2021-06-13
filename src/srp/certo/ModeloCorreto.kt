@@ -4,7 +4,7 @@ package srp.certo
  * @author RubioAlves
  * Created 13/06/2021 at 10:53
  */
-class SrpCerto {
+class ModeloCorreto {
 
     class Pedido(){
         fun calculateTotalSum(){/*...*/}

@@ -4,7 +4,7 @@ package dip.certo
  * @author RubioAlves
  * Created 13/06/2021 at 13:21
  */
-class DipCerto {
+class ModeloCorreto {
 
     interface Dispositivo {
         fun acionar()

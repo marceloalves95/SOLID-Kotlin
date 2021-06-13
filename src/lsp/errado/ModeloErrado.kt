@@ -4,7 +4,7 @@ package lsp.errado
  * @author RubioAlves
  * Created 13/06/2021 at 11:54
  */
-class LspErrado {
+class ModeloErrado {
 
     open class Passaro {
         open fun voar(){/*...*/}
@@ -21,8 +21,5 @@ class LspErrado {
         override fun voar(){/*...*/}
 
     }
-
-
-
 
 }

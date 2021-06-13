@@ -4,7 +4,7 @@ package ocp.errado
  * @author RubioAlves
  * Created 13/06/2021 at 11:02
  */
-class OcpErrado {
+class ModeloErrado {
 
     open class Funcionario{
 

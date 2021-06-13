@@ -4,7 +4,7 @@ package ocp.certo
  * @author RubioAlves
  * Created 13/06/2021 at 11:02
  */
-class OcpCerto {
+class ModeloCorreto {
 
     interface Remuneravel{
         fun remuneracao():Double

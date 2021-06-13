@@ -27,7 +27,7 @@ Projeto de estudo baseado nos principais conceitos sobre o SOLID.
 |     **I**      |             Errado             |           Certo            |
 |     **D**      |             Errado             |           Certo            |
 
-## Single Responsiblity Principle 
+## Single Responsibility Principle 
 
 > Princípio da Responsabilidade Única — ***Uma classe deve ter um, e somente um, motivo para mudar***.
 

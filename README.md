@@ -1,6 +1,8 @@
 # SOLID-Kotlin
 Projeto de estudo baseado nos principais conceitos sobre o SOLID.
 
+![](src/imagens/SOLID.png)
+
 ## O que é o SOLID?
 
 > O SOLID são cinco princípios da programação orientada a objetos que facilitam no desenvolvimento de softwares, tornando-os fáceis de manter e estender. Esses princípios podem ser aplicados a qualquer linguagem de POO.

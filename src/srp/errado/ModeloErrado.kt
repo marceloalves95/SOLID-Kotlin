@@ -6,24 +6,13 @@ package srp.errado
  */
 class ModeloErrado {
 
-    class Pedido{
+    class Robot{
 
-        //Informações do Pedido
-        fun calculateTotalSum(){/*...*/}
-        fun getItems(){/*...*/}
-        fun getItemCount(){/*...*/}
-        fun addItem(item:String){/*...*/}
-        fun deleteItem(){/*...*/}
+        fun chef(){/*...*/}
+        fun gardener(){/*...*/}
+        fun painter(){/*...*/}
+        fun driver(){/*...*/}
 
-        //Exibição do Pedido
-        fun printOrder(){/*...*/}
-        fun showOrder(){/*...*/}
-
-        //Manipulação do Pedido
-        fun load(){/*...*/}
-        fun save(){/*...*/}
-        fun update(){/*...*/}
-        fun delete(){/*...*/}
     }
 
 }

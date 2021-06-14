@@ -6,24 +6,21 @@ package srp.certo
  */
 class ModeloCorreto {
 
-    class Pedido(){
-        fun calculateTotalSum(){/*...*/}
-        fun getItems(){/*...*/}
-        fun getItemCount(){/*...*/}
-        fun addItem(item:String){/*...*/}
-        fun deleteItem(item:String){/*...*/}
-    }
+    open class Robot{
 
-    class PedidoRepository(){
-        fun load(pedidoID:Int){/*...*/}
-        fun save(pedido:Pedido){/*...*/}
-        fun update(pedido:Pedido){/*...*/}
-        fun delete(pedido:Pedido){/*...*/}
-    }
+        class Chef:Robot(){
+            fun cook(){/*...*/}
+        }
+        class Gardener:Robot(){
+            fun plant(){/*...*/}
+        }
+        class Painter:Robot(){
+            fun paint(){/*...*/}
+        }
+        class Driver:Robot(){
+            fun drive(){/*...*/}
+        }
 
-    class PedidoView(){
-        fun printOrder(pedido:Pedido){/*...*/}
-        fun showOrder(pedido:Pedido){/*...*/}
     }
 
 }

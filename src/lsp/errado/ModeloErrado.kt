@@ -6,19 +6,18 @@ package lsp.errado
  */
 class ModeloErrado {
 
-    open class Passaro {
-        open fun voar(){/*...*/}
-    }
-    class Pato : Passaro(){
-        override fun voar(){/*...*/}
-    }
-    //A classe Avestruz é um subtipo da classe Pássaro.
-    class Avestruz : Passaro(){
+    open class RobotSam{
 
-        /*Avestruz é um pássaro, mas não pode voar.
-        Isso significa que a classe Avestruz não deveria ser capaz de usar o método voar.
-        Nesse caso, estamos quebrando o princípio do LSP.*/
-        override fun voar(){/*...*/}
+        open fun serveCoffee() = println("Here´s your coffee")
+
+    }
+    //A classe RobotEden é um subtipo da classe RobotSam.
+    class RobotEden: RobotSam() {
+
+        //Mais ele não serve café, somente água.
+        override fun serveCoffee(){/*...*/}
+
+        fun serveWater() = println("I can´t make coffee but here´s water")
 
     }
 

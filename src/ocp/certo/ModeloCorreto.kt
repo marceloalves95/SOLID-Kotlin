@@ -6,25 +6,19 @@ package ocp.certo
  */
 class ModeloCorreto {
 
-    interface Remuneravel{
-        fun remuneracao():Double
+    interface Work{
+        fun paint()
+        fun cut()
     }
 
-    class ContratoClt:Remuneravel {
-        override fun remuneracao(): Double = 2000.0
-    }
-    class Estagio:Remuneravel{
-        override fun remuneracao(): Double = 1200.0
-    }
-    class FolhaDePagamento{
+    class Robot:Work{
 
-        private var saldo:Double = 0.0
+        override fun cut(){/*...*/}
+        override fun paint(){/*...*/}
 
-        fun calcular(funcionario:Remuneravel){
-            saldo = funcionario.remuneracao()
-            println(saldo)
-        }
+        fun print() = println("Now, I can cut & paint")
 
     }
 
 }
+

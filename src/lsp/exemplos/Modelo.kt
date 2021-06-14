@@ -1,4 +1,4 @@
-package lsp.model
+package lsp.exemplos
 
 /**
  * @author RubioAlves
@@ -12,17 +12,14 @@ class Modelo {
     val objetoB = B()
 
     open class A{
-        open fun getNome(){
-            println("meu nome é A")
-        }
+        open fun getNome() = println("meu nome é A")
     }
     class B: A() {
-        override fun getNome(){
-            println("meu nome é B")
-        }
+        override fun getNome() = println("meu nome é B")
     }
 
     fun imprimeNome(objeto: A) = objeto.getNome()
 
 
 }
+

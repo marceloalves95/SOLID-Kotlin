@@ -6,12 +6,34 @@ package isp.certo
  */
 class ModeloCorreto {
 
-    interface Aves{/*...*/}
-    interface AvesQueVoam:Aves{
-        fun voar()
+    interface Exercices{/*...*/}
+
+    interface CanSpinAround:Exercices{
+        fun spinAround()
     }
-    class Papagaio:AvesQueVoam{
-        override fun voar(){/*...*/}
+    interface CanRotateArms:Exercices{
+        fun rotateArms()
     }
-    class Pinguim:Aves{/*...*/}
+    interface CanWiggleAntennas:Exercices{
+        fun wiggleAntennas()
+    }
+
+    class RobotWithAntennas:CanRotateArms, CanSpinAround, CanWiggleAntennas{
+
+        override fun spinAround() {/*...*/}
+        override fun rotateArms() {/*...*/}
+        override fun wiggleAntennas() {/*...*/}
+
+        fun print() = println("Awesome!")
+
+    }
+    class RobotNotAntennas:CanRotateArms, CanSpinAround{
+
+        override fun spinAround() {/*...*/}
+        override fun rotateArms() {/*...*/}
+
+        fun print() = println("Awesome!")
+
+    }
+
 }

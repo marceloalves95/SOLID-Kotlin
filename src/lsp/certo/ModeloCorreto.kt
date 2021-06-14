@@ -6,14 +6,15 @@ package lsp.certo
  */
 class ModeloCorreto {
 
-    open class Passaro{/*...*/}
-    open class PassarosVoadores : Passaro() {
-        open fun voar(){/*...*/}
-    }
+    open class RobotSam{
 
-    class Pato : PassarosVoadores(){
-        override fun voar(){/*...*/}
+        open fun serveCoffee() = println("Here´s your coffee")
+
     }
-    class Avestruz : Passaro()
+    class RobotEden: RobotSam() {
+
+        override fun serveCoffee() = println("Here´s a cappuccino")
+
+    }
 
 }

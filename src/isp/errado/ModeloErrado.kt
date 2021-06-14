@@ -6,21 +6,30 @@ package isp.errado
  */
 class ModeloErrado {
 
-    interface Aves{
-        fun voar()
+    interface Exercises{
+        fun spinAround()
+        fun rotateArms()
+        fun wiggleAntennas()
     }
-    class Papagaio:Aves{
-        override fun voar(){/*...*/}
+    class RobotWithAntennas:Exercises{
+
+        override fun spinAround() {/*..*/}
+        override fun rotateArms() {/*..*/}
+        override fun wiggleAntennas() {/*..*/}
+
     }
 
-    /*
-    A classe Pinguim é uma ave que não voa.
-    A Interface Aves está forçando a Classe Pinguim a implementar esse método.
-    Isso viola o príncipio do ISP e do LSP também.
-    */
+    //A classe RobotNotAntennas é um robô mais não possui antenas.
+    class RobotNotAntennas:Exercises{
 
-    class Pinguim:Aves{
-        override fun voar(){/*...*/}
+        override fun spinAround() {/*..*/}
+        override fun rotateArms() {/*..*/}
+
+        //A Interface Exercises está forçando a Classe RobotNotAntennas a implementar esse método.
+        //Isso viola o príncipio do Interface Segregation Principle e do Liskov Substitution Principle também.
+        override fun wiggleAntennas() = println("Oops! But I don´t have antennas")
+
+
     }
 
 }

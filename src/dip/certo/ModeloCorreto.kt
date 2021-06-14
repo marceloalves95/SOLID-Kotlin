@@ -6,36 +6,24 @@ package dip.certo
  */
 class ModeloCorreto {
 
-    interface Dispositivo {
-        fun acionar()
-        fun ligado(): Boolean
-        fun ligar()
-        fun desligar()
+    interface Tool{
+
+        fun cutterArm()
+        //Example
+        //fun knifeArm()
     }
 
-    class Ventilador : Dispositivo {
+    class Robot{
 
-        override fun ligado(): Boolean = true
-        override fun ligar() = println("Ligado")
-        override fun desligar() = println("Desligado")
-        override fun acionar() = if (ligado()) ligar() else desligar()
+        fun print() = println("I cut with any tool given to me")
 
-    }
-    class Lampada:Dispositivo{
+        class Cutter(private val tool:Tool){
 
-        override fun ligado(): Boolean = false
-        override fun ligar() = println("Ligado")
-        override fun desligar() = println("Desligado")
+            fun cutPizza() = tool.cutterArm()
+            //Example
+            //fun cutPizza() = tool.knifeArm()
 
-        override fun acionar() = if (ligado()) ligar() else desligar()
-
-    }
-    class Interruptor(private val dispositivo:Dispositivo){
-
-        fun adionarDispositivo(){
-            dispositivo.acionar()
         }
-
     }
 
 }

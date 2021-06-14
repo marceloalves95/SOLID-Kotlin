@@ -6,25 +6,20 @@ package dip.errado
  */
 class ModeloErrado {
 
-    /*
-    No exemplo, podemos perceber que além de quebrar outros princípios do SOLID,
-    a classe concreta Interruptor depende de uma outra classe concreta (Ventilador).
-    O Interruptor deveria ser capaz de acionar qualquer dispositivo independente de
-    ser um ventilador uma lâmpada ou até mesmo um carro.
-     */
-    class Interruptor{
+    class Robot{
 
-        private val ventilador:Ventilador = Ventilador()
+        private val cutterArm:CutterArm = CutterArm()
 
-        fun acionar(){
-            if (ventilador.ligado()) ventilador.ligar() else ventilador.desligar()
+        fun cutPizza(){
+            cutterArm.cut()
+            println("I cut pizza with my pizza cutter arm")
         }
-    }
-    class Ventilador{
 
-        fun ligado():Boolean = true
-        fun ligar(){}
-        fun desligar(){}
+    }
+    class CutterArm{
+
+        fun cut(){}
+
     }
 
 }

@@ -319,7 +319,10 @@ class ModeloCorreto {
 
 Single Responsibility Principle
 
-![Errado](src/imagens/uml/SRP-Robot1.png) ![Certo](src/imagens/uml/SRP-Robot1.png)
+| ![](src/imagens/uml/SRP-Robot1.png) | ![](src/imagens/uml/SRP-Robot2.png) |
+| :---------------------------------: | :---------------------------------: |
+|             **Errado**              |              **Certo**              |
+
 
 
 

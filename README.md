@@ -321,22 +321,8 @@ Single Responsibility Principle
 
 | ![](src/imagens/uml/SRP-Robot1.png) | ![](src/imagens/uml/SRP-Robot2.png) |
 | :---------------------------------: | :---------------------------------: |
-|             **Errado**              |              **Certo**              |
+|             **Errado**🚫              |              **Certo**✅              |
 
-
-
-
-## O que você deve ou não fazer
-
-**Outros Exemplos:**
-
-| **Princípios** | **O que você NÃO deve fazer**🚫 | **O que você DEVE fazer**✅ |
-| :------------: | :----------------------------: | :------------------------: |
-|     **S**      |             Errado             |           Certo            |
-|     **O**      |             Errado             |           Certo            |
-|     **L**      |             Errado             |           Certo            |
-|     **I**      |             Errado             |           Certo            |
-|     **D**      |             Errado             |           Certo            |
 
 
 ## Fontes

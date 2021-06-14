@@ -19,18 +19,6 @@ Projeto de estudo baseado nos principais conceitos sobre o SOLID.
 4. I **— Interface Segregation Principle** (Princípio da Segregação da Interface)
 5. D **— Dependency Inversion Principle** (Princípio da Inversão da Dependência)
 
-## O que você deve ou não fazer
-
-**Outros Exemplos:**
-
-| **Princípios** | **O que você NÃO deve fazer**🚫 | **O que você DEVE fazer**✅ |
-| :------------: | :----------------------------: | :------------------------: |
-|     **S**      |             Errado             |           Certo            |
-|     **O**      |             Errado             |           Certo            |
-|     **L**      |             Errado             |           Certo            |
-|     **I**      |             Errado             |           Certo            |
-|     **D**      |             Errado             |           Certo            |
-
 ## Single Responsibility Principle 
 
 > Princípio da Responsabilidade Única — ***Uma classe deve ter um, e somente um, motivo para mudar***.
@@ -312,6 +300,18 @@ class ModeloCorreto {
 
 }
 ```
+## O que você deve ou não fazer
+
+**Outros Exemplos:**
+
+| **Princípios** | **O que você NÃO deve fazer**🚫 | **O que você DEVE fazer**✅ |
+| :------------: | :----------------------------: | :------------------------: |
+|     **S**      |             Errado             |           Certo            |
+|     **O**      |             Errado             |           Certo            |
+|     **L**      |             Errado             |           Certo            |
+|     **I**      |             Errado             |           Certo            |
+|     **D**      |             Errado             |           Certo            |
+
 
 ## Fontes
 

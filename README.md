@@ -319,33 +319,33 @@ class ModeloCorreto {
 
 - **Single Responsibility Principle**
 
-  | ![](src/imagens/uml/SRP-Robot1.png) | ![](src/imagens/uml/SRP-Robot2.png) |
-  | :---------------------------------: | :---------------------------------: |
-  |             **Errado**🚫             |             **Certo**✅              |
+  | ![](src/imagens/uml/SRP-Robot1.png) | **Errado**🚫 |
+  | :---------------------------------: | :---------: |
+  | ![](src/imagens/uml/SRP-Robot2.png) | **Certo**✅  |
 
 - **Open-Closed Principle**
 
-  | ![](src/imagens/uml/OCP-Robot1.png) | ![](src/imagens/uml/OCP-Robot2.png) |
-  | :---------------------------------: | :---------------------------------: |
-  |             **Errado**🚫             |             **Certo**✅              |
+  | ![](src/imagens/uml/OCP-Robot1.png) | **Errado**🚫 |
+  | :---------------------------------: | :---------: |
+  | ![](src/imagens/uml/OCP-Robot2.png) | **Certo**✅  |
 
 - **Liskov Substitution Principle**
 
-  | ![](src/imagens/uml/LSP-Robot1.png) | ![](src/imagens/uml/LSP-Robot2.png) |
-  | :---------------------------------: | :---------------------------------: |
-  |             **Errado**🚫             |             **Certo**✅              |
+  | ![](src/imagens/uml/LSP-Robot1.png) | **Errado**🚫 |
+  | :---------------------------------: | :---------: |
+  | ![](src/imagens/uml/LSP-Robot2.png) | **Certo**✅  |
 
 - **Interface Segregation Principle**
 
-  | ![](src/imagens/uml/ISP-Robot1.png) | ![](src/imagens/uml/ISP-Robot2.png) |
-  | :---------------------------------: | :---------------------------------: |
-  |             **Errado**🚫             |             **Certo**✅              |
+  | ![](src/imagens/uml/ISP-Robot1.png) | **Errado**🚫 |
+  | :---------------------------------: | :---------: |
+  | ![](src/imagens/uml/ISP-Robot2.png) | **Certo**✅  |
 
 - **Dependency Inversion Principle**
 
-  | ![](src/imagens/uml/DIP-Robot1.png) | ![](src/imagens/uml/DIP-Robot2.png) |
-  | :---------------------------------: | :---------------------------------: |
-  |             **Errado**🚫             |             **Certo**✅              |
+  | ![](src/imagens/uml/DIP-Robot1.png) | **Errado**🚫 |
+  | :---------------------------------: | :---------: |
+  | ![](src/imagens/uml/DIP-Robot2.png) | **Certo**✅  |
 
    
 

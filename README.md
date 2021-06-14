@@ -21,6 +21,8 @@ Projeto de estudo baseado nos principais conceitos sobre o SOLID.
 
 ## O que você deve ou não fazer
 
+**Outros Exemplos:**
+
 | **Princípios** | **O que você NÃO deve fazer**🚫 | **O que você DEVE fazer**✅ |
 | :------------: | :----------------------------: | :------------------------: |
 |     **S**      |             Errado             |           Certo            |
@@ -44,26 +46,15 @@ Indo um pouco mais fundo, podemos dizer que para o sistema esteja de acordo com 
 ```kotlin
 class ModeloErrado {
 
-    class Pedido{
-        
-        //Informações do Pedido
-        fun calculateTotalSum(){/*...*/}
-        fun getItems(){/*...*/}
-        fun getItemCount(){/*...*/}
-        fun addItem(item:String){/*...*/}
-        fun deleteItem(){/*...*/}
+    class Robot{
 
-        //Exibição do Pedido
-        fun printOrder(){/*...*/}
-        fun showOrder(){/*...*/}
+        fun chef(){/*...*/}
+        fun gardener(){/*...*/}
+        fun painter(){/*...*/}
+        fun driver(){/*...*/}
 
-        //Manipulação do Pedido
-        fun load(){/*...*/}
-        fun save(){/*...*/}
-        fun update(){/*...*/}
-        fun delete(){/*...*/}
     }
-    
+
 }
 ```
 
@@ -72,24 +63,21 @@ A classe *Pedido* viola o Single Responsiblity Principle (SRP) porque realiza 3 
 ```kotlin
 class ModeloCorreto {
 
-    class Pedido(){
-        fun calculateTotalSum(){/*...*/}
-        fun getItems(){/*...*/}
-        fun getItemCount(){/*...*/}
-        fun addItem(item:String){/*...*/}
-        fun deleteItem(item:String){/*...*/}
-    }
+    open class Robot{
 
-    class PedidoRepository(){
-        fun load(pedidoID:Int){/*...*/}
-        fun save(pedido:Pedido){/*...*/}
-        fun update(pedido:Pedido){/*...*/}
-        fun delete(pedido:Pedido){/*...*/}
-    }
+        class Chef:Robot(){
+            fun cook(){/*...*/}
+        }
+        class Gardener:Robot(){
+            fun plant(){/*...*/}
+        }
+        class Painter:Robot(){
+            fun paint(){/*...*/}
+        }
+        class Driver:Robot(){
+            fun drive(){/*...*/}
+        }
 
-    class PedidoView(){
-        fun printOrder(pedido:Pedido){/*...*/}
-        fun showOrder(pedido:Pedido){/*...*/}
     }
 
 }
@@ -104,34 +92,23 @@ class ModeloCorreto {
 ```kotlin
 class ModeloErrado {
 
-    open class Funcionario{
-        open fun salario(): Double = 1700.0
-    }
-    class ContratoClt:Funcionario(){
-        override fun salario():Double = 2000.0
-    }
-    class Estagio:Funcionario(){
-        fun bolsaAuxilio():Double = 500.0
-        override fun salario():Double = 1000.0+bolsaAuxilio()
-    }
-    
-    class FolhaDePagamento{
+    open class Robot{/*...*/}
 
-        private var saldo:Double = 0.0
+    class Cutter:Robot(){
+        fun cut(){/*...*/}
+    }
+    class Painter:Robot(){
+        fun paint(){/*...*/}
+    }
 
-        fun calcular(funcionario: Funcionario){
+    class Work{
 
-            if (funcionario is ContratoClt){
-                saldo = funcionario.salario()
-                println(saldo)
-            }
-            else if (funcionario is Estagio){
-                saldo = funcionario.bolsaAuxilio()
-                println(saldo)
-            }
+        fun working(robot:Robot){
+            if(robot is Cutter) println("I can´t cut")
+            else if (robot is Painter) println("Now, I can paint")
+
         }
     }
-
 }
 ```
 
@@ -140,27 +117,20 @@ class ModeloErrado {
 ```kotlin
 class ModeloCorreto {
 
-    interface Remuneravel{
-        fun remuneracao():Double
+    interface Work{
+        fun paint()
+        fun cut()
     }
 
-    class ContratoClt:Remuneravel {
-        override fun remuneracao(): Double = 2000.0
-    }
-    class Estagio:Remuneravel{
-        override fun remuneracao(): Double = 1200.0
-    }
-    class FolhaDePagamento{
+    class Robot:Work{
 
-        private var saldo:Double = 0.0
+        override fun cut(){/*...*/}
+        override fun paint(){/*...*/}
 
-        fun calcular(funcionario:Remuneravel){
-            saldo = funcionario.remuneracao()
-            println(saldo)
-        }
+        fun print() = println("Now, I can cut & paint")
 
     }
-
+    
 }
 ```
 
@@ -173,20 +143,21 @@ class ModeloCorreto {
 ```kotlin
 class ModeloErrado {
 
-    open class Passaro {
-        open fun voar(){/*...*/}
-    }
-    class Pato : Passaro(){
-        override fun voar(){/*...*/}
-    }
-    //A classe Avestruz é um subtipo da classe Pássaro.
-    class Avestruz : Passaro(){
+    open class RobotSam{
 
-        //Avestruz é um pássaro, mas não pode voar.
-        override fun voar(){/*...*/}
+        open fun serveCoffee() = println("Here´s your coffee")
 
     }
-    
+    //A classe RobotEden é um subtipo da classe RobotSam.
+    class RobotEden: RobotSam() {
+        
+        //Mais ele não serve café, somente água.
+        override fun serveCoffee(){/*...*/}
+
+        fun serveWater() = println("I can´t make coffee but here´s water")
+        
+    }
+
 }
 ```
 
@@ -195,17 +166,17 @@ class ModeloErrado {
 ```kotlin
 class ModeloCorreto {
 
-    open class Passaro{/*...*/}
-    open class PassarosVoadores : Passaro() {
-        open fun voar(){/*...*/}
+    open class RobotSam{
+
+        open fun serveCoffee() = println("Here´s your coffee")
+
+    }
+    class RobotEden: RobotSam() {
+
+        override fun serveCoffee() = println("Here´s a cappuccino")
+
     }
 
-    class Pato : PassarosVoadores(){
-        override fun voar(){/*...*/}
-    }
-    
-    class Avestruz : Passaro()
-    
 }
 ```
 
@@ -218,17 +189,33 @@ class ModeloCorreto {
 ```kotlin
 class ModeloErrado {
 
-    interface Aves{
-        fun voar()
-    }
-    class Papagaio:Aves{
-        override fun voar(){/*...*/}
-    }
-    //A classe Pinguim é uma ave que não voa.
-    class Pinguim:Aves{
-        override fun voar(){/*...*/}
+    interface Exercises{
+        fun spinAround()
+        fun rotateArms()
+        fun wiggleAntennas()
     }
     
+    class RobotWithAntennas:Exercises{
+
+        override fun spinAround() {/*..*/}
+        override fun rotateArms() {/*..*/}
+        override fun wiggleAntennas() {/*..*/}
+
+    }
+    
+    //A classe RobotNotAntennas é um robô mais não possui antenas.
+    class RobotNotAntennas:Exercises{
+
+        override fun spinAround() {/*..*/}
+        override fun rotateArms() {/*..*/}
+        
+        //A Interface Exercises está forçando a Classe RobotNotAntennas a implementar esse método.
+        //Isso viola o príncipio do Interface Segregation Principle e do Liskov Substitution Principle também.
+        override fun wiggleAntennas() = println("Oops! But I don´t have antennas")
+
+
+    }
+
 }
 ```
 
@@ -237,16 +224,36 @@ class ModeloErrado {
 ```kotlin
 class ModeloCorreto {
 
-    interface Aves{/*...*/}
-    interface AvesQueVoam:Aves{
-        fun voar()
+    interface Exercices{/*...*/}
+
+    interface CanSpinAround:Exercices{
+        fun spinAround()
     }
-    class Papagaio:AvesQueVoam{
-        override fun voar(){/*...*/}
+    interface CanRotateArms:Exercices{
+        fun rotateArms()
     }
-    
-    class Pinguim:Aves{/*...*/}
-    
+    interface CanWiggleAntennas:Exercices{
+        fun wiggleAntennas()
+    }
+
+    class RobotWithAntennas:CanRotateArms, CanSpinAround, CanWiggleAntennas{
+
+        override fun spinAround() {/*...*/}
+        override fun rotateArms() {/*...*/}
+        override fun wiggleAntennas() {/*...*/}
+
+        fun print() = println("Awesome!")
+
+    }
+    class RobotNotAntennas:CanRotateArms, CanSpinAround{
+
+        override fun spinAround() {/*...*/}
+        override fun rotateArms() {/*...*/}
+
+        fun print() = println("Awesome!")
+
+    }
+
 }
 ```
 
@@ -259,19 +266,20 @@ class ModeloCorreto {
 ```kotlin
 class ModeloErrado {
 
-    class Interruptor{
+    class Robot{
 
-        private val ventilador:Ventilador = Ventilador()
+        private val cutterArm:CutterArm = CutterArm()
 
-        fun acionar(){
-            if (ventilador.ligado()) ventilador.ligar() else ventilador.desligar()
+        fun cutPizza(){
+            cutterArm.cut()
+            println("I cut pizza with my pizza cutter arm")
         }
-    }
-    class Ventilador{
 
-        fun ligado():Boolean = true
-        fun ligar(){}
-        fun desligar(){}
+    }
+    class CutterArm{
+
+        fun cut(){}
+
     }
 
 }
@@ -282,36 +290,24 @@ No exemplo, podemos perceber que além de quebrar outros princípios do SOLID, a
 ```kotlin
 class ModeloCorreto {
 
-    interface Dispositivo {
-        fun acionar()
-        fun ligado(): Boolean
-        fun ligar()
-        fun desligar()
+    interface Tool{
+
+        fun cutterArm()
+        //Example
+        //fun knifeArm()
     }
 
-    class Ventilador : Dispositivo {
+    class Robot{
 
-        override fun ligado(): Boolean = true
-        override fun ligar() = println("Ligado")
-        override fun desligar() = println("Desligado")
-        override fun acionar() = if (ligado()) ligar() else desligar()
+        fun print() = println("I cut with any tool given to me")
 
-    }
-    class Lampada:Dispositivo{
+        class Cutter(private val tool:Tool){
 
-        override fun ligado(): Boolean = false
-        override fun ligar() = println("Ligado")
-        override fun desligar() = println("Desligado")
+            fun cutPizza() = tool.cutterArm()
+            //Example
+            //fun cutPizza() = tool.knifeArm()
 
-        override fun acionar() = if (ligado()) ligar() else desligar()
-
-    }
-    class Interruptor(private val dispositivo:Dispositivo){
-
-        fun adionarDispositivo(){
-            dispositivo.acionar()
         }
-
     }
 
 }

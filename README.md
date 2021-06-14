@@ -319,7 +319,9 @@ class ModeloCorreto {
 
 Single Responsibility Principle
 
-![](src/imagens/uml/SRP-Robot1.png)
+![Errado](src/imagens/uml/SRP-Robot1.png) ![Certo](src/imagens/uml/SRP-Robot1.png)
+
+
 
 ## O que você deve ou não fazer
 

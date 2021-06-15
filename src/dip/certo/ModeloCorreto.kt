@@ -7,23 +7,18 @@ package dip.certo
 class ModeloCorreto {
 
     interface Tool{
-
         fun cutterArm()
         //Example
         //fun knifeArm()
     }
 
-    class Robot{
+    class Robot(private val tool:Tool){
 
         fun print() = println("I cut with any tool given to me")
+        fun cutPizza() = tool.cutterArm()
+        //Example
+        //fun cutPizza() = tool.knifeArm()
 
-        class Cutter(private val tool:Tool){
-
-            fun cutPizza() = tool.cutterArm()
-            //Example
-            //fun cutPizza() = tool.knifeArm()
-
-        }
     }
 
 }

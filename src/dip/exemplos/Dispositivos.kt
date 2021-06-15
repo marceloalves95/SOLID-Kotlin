@@ -28,9 +28,7 @@ class Dispositivos{
     }
     class Interruptor(private val dispositivo:Dispositivo){
 
-        fun adionarDispositivo(){
-            dispositivo.acionar()
-        }
+        fun adionarDispositivo() = dispositivo.acionar()
 
     }
 }

@@ -10,15 +10,13 @@ class ModeloErrado {
 
         private val cutterArm:CutterArm = CutterArm()
 
-        fun cutPizza(){
-            cutterArm.cut()
-            println("I cut pizza with my pizza cutter arm")
-        }
+        fun cutPizza() = cutterArm.cut()
 
     }
+
     class CutterArm{
 
-        fun cut(){}
+        fun cut() = println("I cut pizza with my pizza cutter arm")
 
     }
 

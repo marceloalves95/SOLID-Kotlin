@@ -353,9 +353,24 @@ Note que no exemplo acima, a classe `RobotNotAntennas ` agora possui as ações,
 
 ![](src/imagens/DIP.png)
 
-O *Dependency Inversion Principle*  é a base para termos um projeto com um excelente design orientado a objetos, focado no domínio e com um arquitetura flexível.
+O *Dependency Inversion Principle* é a base para termos um projeto com um excelente design orientado a objetos, focado no domínio e com um arquitetura flexível.
 
-De uma forma objetiva o princípio nos faz entender que sempre devemos depender de abstrações e não das implementações, afinal de contas, as abstrações mudam menos e facilitam a mudança de comportamento e as evoluções do código. 
+De uma forma objetiva o princípio nos faz entender que sempre devemos depender de abstrações e não das implementações, afinal de contas, as abstrações mudam menos e facilitam a mudança de comportamento e as evoluções do código.  Nesse princípio, você está invertendo a maneira de você depender das coisas, ao invés de você depender da implementação agora você passa a depender de abstrações.
+
+De acordo com Uncle Bob, esse princípio pode ser definido da seguinte forma:
+
+1. Módulos de alto nível ***não devem depender de módulos de baixo nível***. Ambos devem ***depender de abstrações***.
+2. Abstrações ***não devem depender de detalhes***. Detalhes devem ***depender de abstrações***.
+
+> - **Módulo:** é um artefato de programação que pode ser desenvolvido e compilado separadamente de outras partes do programa. São ficheiros com código que permitem aumentar as capacidades das linguagens de programação.
+> - **Módulo de alto nível:** é um módulo que está mais próximo do domínio/negócio de um sistema.
+> - **Módulo de baixo nível:** é um módulo que está mais próximo da infraestrutura de um sistema
+
+Isso é o que nós chamamos de Princípio da Inversão de Dependência. Não confunda isso com Injeção de Dependência.  O nome é parecido.
+
+A **Inversão de Dependência** é um *princípio (Conceito)* e a **Injeção de Dependência** é um *padrão de projeto (Design Pattern)*.
+
+> **Injeção de Dependência:** é a ideia de você ter os parâmetros no construtor, e alguém, geralmente um framework, automaticamente injetar essas dependências pra você. Ele é usado para evitar o alto nível de acoplamento de código dentro de uma aplicação.
 
 **Veja um exemplo:**
 
@@ -408,16 +423,16 @@ class ModeloCorreto {
 
 }
 ```
-Note que no exemplo acima, a classe `Robot ` não tem a mínima ideia de qual tipo de ferramenta ele irá utilizar. Dessa forma, não estamos mais violando o **Princípio da Inversão de Dependência**, ambas as classes estão desacopladas e dependendo de uma abstração. Além disso, estamos favorecendo a reusabilidade do código e como *“bônus”* também estamos respeitando o **Princípio da Responsabilidade Única** e o **Princípio Aberto-Fechado**.
+Note que no exemplo acima, a classe `Robot ` não tem a mínima ideia de qual tipo de ferramenta ele irá utilizar. 
+
+> Como vimos no exemplo acima, sempre que uma classe for depender de outra, ela deve ***depender sempre de outro módulo mais estável do que ela mesma***. 
 
 **O uso do Princípio da Inversão de Dependência gera os seguintes benefícios, sendo eles:**
 
-- **Interfaces coesas:** interfaces coesas são aquelas cujos comportamentos são simples e bem definidos. Ela também possue apenas uma única responsabilidade (elas seguem o Princípio da Responsabilidade Única). Suas implementações não precisam fazer “gambiarras” para se adaptarem. 
-- **Maior reuso.**
+- **Uso de construtor com interface coesa:** interface coesa é aquela cujo comportamento é simples e bem definido. Ela também possue apenas uma única responsabilidade (ela respeita o Princípio da Responsabilidade Única). Suas implementações não precisam fazer “gambiarras” para se adaptarem. Nesse contexto, você pode utilizar a **Injeção de Dependência**.
+- **Reusabilidade:** quando aplicamos a interface coesa no construtor da classe, isso favorece a reusabilidade do código e como *“bônus”* também respeitamos o **Princípio da Responsabilidade Única** e o **Princípio Aberto-Fechado**.
 - **Mais estáveis.**
 - **Facilidade de manutenção e eficiência no código.**
-
-> A ideia é: sempre que uma classe for depender de outra, ela deve ***depender sempre de outro módulo mais estável do que ela mesma***.
 
 ## Diagramas de Classe
 

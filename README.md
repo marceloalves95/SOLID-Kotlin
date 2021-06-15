@@ -46,7 +46,7 @@ class ModeloErrado {
 }
 ```
 
-A classe `Robot ` viola o Single Responsiblity Principle (SRP) porque realiza 4 tipos distintos de tarefas, ou seja, ela executa ações diferentes em uma mesma classe. Lembre-se, o princípio da responsabilidade única preza que *uma classe deve ter um, e somente um, motivo para mudar*.  
+A classe `Robot ` viola o Single Responsiblity Principle (SRP) porque realiza 4 tipos distintos de tarefas, ou seja, ela executa ações diferentes em uma mesma classe. Lembre-se, o Princípio da Responsabilidade Única preza que *uma classe deve ter um, e somente um, motivo para mudar*.  
 
 **A violação do Single Responsibility Principle pode gerar alguns problemas, sendo eles:**
 

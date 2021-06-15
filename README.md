@@ -149,7 +149,7 @@ A classe `Work `precisa verificar a classe `Robot ` para aplicar qual tipo de tr
 - **Alteração de classe:** quando alterarmos uma classe já existente para adicionar um novo comportamento, corremos um sério risco de introduzir bugs em algo que já estava funcionando.
 - **Classes altamente testáveis:** a partir do momento em que a classe deixa clara todas as suas dependências, e possibilita a troca delas, criamos classes facilmente extensíveis.
 
-Aplicando o Open-Closed Principle (OCP) na classe `ModeloCorreto `, podemos refatorar o código da seguinte forma:
+Aplicando o Open-Closed Principle (OCP) na classe `ModeloCorreto`, podemos refatorar o código da seguinte forma:
 
 ```kotlin
 class ModeloCorreto {

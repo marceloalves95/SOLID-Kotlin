@@ -221,14 +221,14 @@ class ModeloErrado {
 }
 ```
 
-Esse exemplo nos mostra a maneira errada de aplicar o princípio do *Liskov Substitution Principle* e o conceito de herança. A classe derivada `RobotEden ` herda o método da classe base  `RobotSam `, mais ele não foi criado para servir café. Nesse caso, não deve ser aplicado o conceito de herança e isso viola o Princípio da Substituição de Liskov. Lembre-se, o Princípio da Substituição de Liskov preza que: *As classes derivadas devem ser substituíveis por suas classes bases*.  
+Esse exemplo nos mostra a maneira errada de aplicar o princípio do *Liskov Substitution Principle* e o conceito de herança. A classe derivada `RobotEden` herda o método da classe base  `RobotSam`, mais ele não foi criado para servir café. Nesse caso, não deve ser aplicado o conceito de herança e isso viola o Princípio da Substituição de Liskov. Lembre-se, o Princípio da Substituição de Liskov preza que: *As classes derivadas devem ser substituíveis por suas classes bases*.  
 
 > **Herança:** é um mecanismo que permite que características comuns a diversas classes sejam fatoradas em uma classe base, ou superclasse. Esse importante conceito possibilita que as classes compartilhem seus atributos, métodos e outros membros da classe entre si. Para a ligação entre as classes, a herança adota um relacionamento esquematizado hierarquicamente. Na Herança temos dois tipos principais de classe:
 >
 > - **Classe Base**: a classe que concede as características a uma outra classe.
 > - **Classe Derivada**: a classe que herda as características da classe base.
 
-Aplicando o Liskov Substitution Principle (LSP) na classe `ModeloCorreto `, podemos refatorar o código da seguinte forma:
+Aplicando o Liskov Substitution Principle (LSP) na classe `ModeloCorreto`, podemos refatorar o código da seguinte forma:
 
 ```kotlin
 class ModeloCorreto {
@@ -300,7 +300,7 @@ Percebam que ao criar a interface `Exercises`, atribuímos comportamentos genér
 
 - **Interface não coesa:** uma interface que não é coesa tende a ser mais génerica, assim como mostra o exemplo acima. Interfaces não coesas têm baixo reuso, e quando o desenvolvedor não tem a experiência necessária para perceber e resolver o problema, ele acaba por complicar ainda mais o projeto de classes.
 
-Aplicando o Interface Segregation Principle (ISP) na classe `ModeloCorreto `, podemos refatorar o código da seguinte forma:
+Aplicando o Interface Segregation Principle (ISP) na classe `ModeloCorreto`, podemos refatorar o código da seguinte forma:
 
 ```kotlin
 class ModeloCorreto {
@@ -338,7 +338,7 @@ class ModeloCorreto {
 }
 ```
 
-Note que no exemplo acima, a classe `RobotNotAntennas ` agora possui as ações, ou métodos,  mais condizentes com as características da classe dele.
+Note que no exemplo acima, a classe `RobotNotAntennas` agora possui as ações, ou métodos,  mais condizentes com as características da classe dele.
 
 **O uso do Princípio da Segregação de Interfaces gera os seguintes benefícios, sendo eles:**
 
@@ -423,7 +423,7 @@ class ModeloCorreto {
 
 }
 ```
-Note que no exemplo acima, a classe `Robot ` não tem a mínima ideia de qual tipo de ferramenta ele irá utilizar. 
+Note que no exemplo acima, a classe `Robot` não tem a mínima ideia de qual tipo de ferramenta ele irá utilizar. 
 
 > Como vimos no exemplo acima, sempre que uma classe for depender de outra, ela deve ***depender sempre de outro módulo mais estável do que ela mesma***. 
 

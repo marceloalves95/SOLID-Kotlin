@@ -50,19 +50,19 @@ A classe `Robot ` viola o Single Responsiblity Principle (SRP) porque realiza 4 
 
 **A violação do Single Responsibility Principle pode gerar alguns problemas, sendo eles:**
 
-- **Falta de coesão** — uma classe não deve assumir responsabilidades que não são suas. Classes não coesas têm uma grande chance de terem defeitos. Toda classe que é não coesa ***não para de crescer nunca***.
-- **Alto acoplamento** — Mais responsabilidades geram um maior nível de dependências, deixando o sistema engessado e frágil para alterações;
-- **Dificuldades na implementação de testes automatizados** — É difícil de *“mockar”* *esse tipo de classe;*
+- **Classe não coesa:** uma classe não deve assumir responsabilidades que não são suas. Classes não coesas têm uma grande chance de terem defeitos. Toda classe que é não coesa ***não para de crescer nunca***.
+- **Alto acoplamento:** mais responsabilidades geram um maior nível de dependências, deixando o sistema engessado e frágil para alterações.
+- **Dificuldades na implementação de testes automatizados:**  é difícil de *“mockar”* *esse tipo de classe.
 - **Dificuldades para reaproveitar o código.**
 
-> **Mock ou Mockar :** Em desenvolvimento de software são objetos que simulam o comportamento de objetos reais de forma controlada. São normalmente criados para testar o comportamento de outros objetos. 
+> **Mock ou Mockar :** em desenvolvimento de software são objetos que simulam o comportamento de objetos reais de forma controlada. São normalmente criados para testar o comportamento de outros objetos. 
 
 > **Coesão:** uma classe coesa é aquela que possui uma única responsabilidade. Além disso, elas são vitais em um sistema orientado a objetos. 
 
-> **Acoplamento:** É a união ou ligação entre dois ou mais corpos, formando um único conjunto. Esse corpo pode ser representado por classes, entidades, métodos, componentes, tabelas etc. Quando falamos, por exemplo, de relacionamento entre Classes, Tabelas, Domínios, Sub-Sistemas, Casos de Uso etc. estamos falando de acoplamento. Podemos afirmar que no contexto de um software *qualquer relacionamento gera acoplamento*.
+> **Acoplamento:** é a união ou ligação entre dois ou mais corpos, formando um único conjunto. Esse corpo pode ser representado por classes, entidades, métodos, componentes, tabelas etc. Quando falamos, por exemplo, de relacionamento entre Classes, Tabelas, Domínios, Sub-Sistemas, Casos de Uso etc. estamos falando de acoplamento. Podemos afirmar que no contexto de um software *qualquer relacionamento gera acoplamento*.
 >
-> - **Baixo Acoplamento** — Quando um sistema possui entre seus componentes uma relação de **interdependência fraca**, significa que a **dependência entre seus componentes** é baixa, ou seja, estão acoplados, **mas fracamente acoplados**. 
-> - **Alto Acoplamento** — Quando um sistema possui entre seus componentes uma relação de **interdependência forte**, significa que a **dependência entre seus componentes** é alta, ou seja, estão acoplados, **mas fortemente acoplados**.
+> - **Baixo Acoplamento:** quando um sistema possui entre seus componentes uma relação de **interdependência fraca**, significa que a **dependência entre seus componentes** é baixa, ou seja, estão acoplados, **mas fracamente acoplados**. 
+> - **Alto Acoplamento**: quando um sistema possui entre seus componentes uma relação de **interdependência forte**, significa que a **dependência entre seus componentes** é alta, ou seja, estão acoplados, **mas fortemente acoplados**.
 >
 >  
 
@@ -95,10 +95,15 @@ Note que no exemplo acima que agora temos 4 classes, cada uma cuidando da sua re
 
 > Esse princípio é um dos mais importantes, ele acaba sendo a base para outros princípios e padrões, além disso ela aborda temas como acoplamento e coesão, características que todo código orientado a objetos deveria ter.
 
-**O uso do princípio do Single Responsibility Principle gera os seguintes benefícios, sendo eles:**
+**O uso do Princípio da Responsabilidade Única gera os seguintes benefícios, sendo eles:**
 
-- **Uso de classes coesas:** Classes coesas tendem a ter menos código, são mais simples de serem mantidas, são menos suscetíveis a problemas, o seu reuso é mais fácil e a chance de propagarem problemas para outras classes é menor. 
+- **Coesão das classes:** classes coesas tendem a ter menos código, são mais simples de serem mantidas, são menos suscetíveis a problemas, o seu reuso é mais fácil e a chance de propagarem problemas para outras classes é menor. 
 - **Ela também pode ser aplicada para métodos e funções:** tudo que é responsável por executar uma ação, deve ser responsável por apenas aquilo que se propõe a fazer. 
+- **Facilidade de manutenção e evolução do código**
+- **Código limpo e de fácil entendimento**
+- **Facilidade para desenvolvimento de testes**
+- **Redução do acoplamento**
+- **Complexidade reduzida**
 
 > Não ache que você conseguirá escrever classes coesas o tempo todo, e de primeira. Escrever código de qualidade é sempre incremental; você modela, observa seu modelo, aprende com ele e o melhora.
 
@@ -106,7 +111,7 @@ Aplicando esse princípio, automaticamente você estará escrevendo um código m
 
 ## Open-Closed Principle 
 
-> Princípio do Aberto-Fechado — ***Você deve ser capaz de estender um comportamento de uma classe sem a necessidade de modificá-lo***.
+> Princípio Aberto-Fechado — ***Você deve ser capaz de estender um comportamento de uma classe sem a necessidade de modificá-lo***.
 
 ![](src/imagens/OCP.png)
 
@@ -137,12 +142,12 @@ class ModeloErrado {
 }
 ```
 
-A classe `Work `precisa verificar a classe `Robot ` para aplicar qual tipo de trabalho o robô faz. Supondo que o robô faça mais do que só cortar e pintar, obviamente seria necessário modificar essa classe! Sendo assim, estaríamos quebrando o princípio do Open-Closed Principle.
+A classe `Work `precisa verificar a classe `Robot ` para aplicar qual tipo de trabalho o robô faz. Supondo que o robô faça mais do que só cortar e pintar, obviamente seria necessário modificar essa classe. Lembre-se, o princípio aberto-fechado preza que *você deve ser capaz de estender um comportamento de uma classe sem a necessidade de modificá-lo*.
 
 **A violação do Open-Closed Principle pode gerar alguns problemas, sendo eles:**
 
-- **Alteração de classe:** Quando alterarmos uma classe já existente para adicionar um novo comportamento, corremos um sério risco de introduzir bugs em algo que já estava funcionando.
-- **Classes altamente testáveis:** A partir do momento em que a classe deixa clara todas as suas dependências, e possibilita a troca delas, criamos classes facilmente extensíveis.
+- **Alteração de classe:** quando alterarmos uma classe já existente para adicionar um novo comportamento, corremos um sério risco de introduzir bugs em algo que já estava funcionando.
+- **Classes altamente testáveis:** a partir do momento em que a classe deixa clara todas as suas dependências, e possibilita a troca delas, criamos classes facilmente extensíveis.
 
 Aplicando o Open-Closed Principle (OCP) na classe `ModeloCorreto `, podemos refatorar o código da seguinte forma:
 
@@ -168,11 +173,32 @@ class ModeloCorreto {
 
 A classe `Robot` não precisa saber quais são os tipos de trabalho do robô. Ela será capaz de executar diretamente as ações dos tipos de trabalho do robô (que é cortar e pintar, respectivamente) — *desde que ele implemente a interface* `Work` *—* sem qualquer necessidade de alteração do seu código fonte. Dessa forma, acabamos de implementar o Open-Closed Principle em nosso código.
 
+**O uso do Princípio Aberto-Fechado gera os seguintes benefícios, sendo eles:**
+
+- **Extensibilidade:** quando termos uma nova funcionalidade ou comportamento, não precisaremos alterar a classe já existente, e sim estendê-la. Com isso mantemos o código original confiável e intacto, e criamos um código com design duradouro, de qualidade e manutenibilidade altas.
+- **Maior uso de abstrações:** quando usamos abstração no nosso código, ela permite que toda a mágica aconteça. Se temos abstrações bem definidas, conseguimos de forma fácil estender os métodos da nossa aplicação. O conceito do Open-Closed Principle indica principalmente o uso da herança para praticarmos a extensão dos métodos.
+
+> **Abstração:** trata-se da capacidade de extrair dos personagens ou dos itens presentes no contexto, suas principais características, criando, dessa forma, objetos. Por exemplo: o que um papagaio e um cachorro têm em comum? Todos eles são animais. Sendo assim, a classe abstrata é Animal.
+
 ## Liskov Substitution Principle
 
 > Princípio da Substituição de Liskov — ***As classes derivadas devem ser substituíveis por suas classes bases***.
 
 ![](src/imagens/LSP.png)
+
+O *Liskov Substitution Principle* tem como objetivo nos alertar quanto a utilização da herança, que é um poderoso mecanismo e deve ser utilizado com extrema parcimônia.
+
+Esse princípio foi introduzido por **Barbara Liskov** em sua conferência “Data abstraction” em 1987. A definição formal de Liskov diz que:
+
+> Se para cada objeto o1 do tipo S há um objeto o2 do tipo T de forma que, para todos os programas P definidos em termos de T, o comportamento de P é inalterado quando o1 é substituído por o2 então S é um subtipo de T
+
+Um exemplo mais simples e de fácil compreensão dessa definição. Seria:
+
+> se S é um subtipo de T, então os objetos do tipo T, em um programa, podem ser substituídos pelos objetos de tipo S sem que seja necessário alterar as propriedades deste programa.
+
+Podemos entender esse princípio da seguinte forma: ***As classes derivadas devem ser substituíveis por suas classes bases***.
+
+**Veja um exemplo:**
 
 ```kotlin
 class ModeloErrado {
@@ -195,7 +221,14 @@ class ModeloErrado {
 }
 ```
 
+Esse exemplo nos mostra a maneira errada de aplicar o princípio do *Liskov Substitution Principle* e o conceito de herança. A classe derivada `RobotEden ` herda o método da classe base  `RobotSam `, mais ele não foi criado para servir café. Nesse caso, não deve ser aplicado o conceito de herança e isso viola o Princípio da Substituição de Liskov. Lembre-se, o Princípio da Substituição de Liskov preza que: *As classes derivadas devem ser substituíveis por suas classes bases*.  
 
+> **Herança:** é um mecanismo que permite que características comuns a diversas classes sejam fatoradas em uma classe base, ou superclasse. Esse importante conceito possibilita que as classes compartilhem seus atributos, métodos e outros membros da classe entre si. Para a ligação entre as classes, a herança adota um relacionamento esquematizado hierarquicamente. Na Herança temos dois tipos principais de classe:
+>
+> - **Classe Base**: a classe que concede as características a uma outra classe.
+> - **Classe Derivada**: a classe que herda as características da classe base.
+
+Aplicando o Liskov Substitution Principle (LSP) na classe `ModeloCorreto `, podemos refatorar o código da seguinte forma:
 
 ```kotlin
 class ModeloCorreto {
@@ -214,11 +247,22 @@ class ModeloCorreto {
 }
 ```
 
-## Interface Segregation Principle 
+**O uso do Princípio da Substituição de Liskov gera os seguintes benefícios, sendo eles:**
+
+- **Uso correto de Herança:** quando respeitamos esse princípio conseguimos ter estruturas melhores e evitamos erros inesperados no nosso código.
+- **Uso correto de Polimorfismo:** seguir esse princípio nos permite usar o polimorfismo com mais confiança. Consequentemente, isso torna o código mais fléxivel. 
+
+> **Polimorfismo:** é o princípio pelo qual duas ou mais classes derivadas da mesma superclasse, ou classe base,  podem invocar métodos que têm a mesma assinatura, mas comportamentos distintos.
+
+- ## Interface Segregation Principle 
 
 > Princípio da Segregação de Interfaces — ***Muitas interfaces específicas são melhores do que uma interface única geral***.
 
 ![](src/imagens/ISP.png)
+
+Esse princípio basicamente diz que é melhor criar *interfaces mais específicas ao invés de termos uma única interface genérica*.
+
+**Veja um exemplo:**
 
 ```kotlin
 class ModeloErrado {
@@ -237,14 +281,11 @@ class ModeloErrado {
 
     }
     
-    //A classe RobotNotAntennas é um robô mais não possui antenas.
     class RobotNotAntennas:Exercises{
 
         override fun spinAround() {/*..*/}
         override fun rotateArms() {/*..*/}
-        
-        //A Interface Exercises está forçando a Classe RobotNotAntennas a implementar esse método.
-        //Isso viola o príncipio do Interface Segregation Principle e do Liskov Substitution Principle também.
+        //Isso não está certo!!!
         override fun wiggleAntennas() = println("Oops! But I don´t have antennas")
 
 
@@ -253,7 +294,13 @@ class ModeloErrado {
 }
 ```
 
+Percebam que ao criar a interface `Exercises`, atribuímos comportamentos genéricos e isso acabou forçando a classe `RobotNotAntennas` a implementar o método `wiggleAntennas()`do qual ela não deveria ter, pois um robô que não possui antenas não pode mexer as antenas! Dessa forma, estamos violando o *Interface Segregation Principle* — E o *Liskov Substitution Principle* também!
 
+**A violação do Interface Segregation Principle pode gerar um grande problema que é:**
+
+- **Interface não coesa:** uma interface que não é coesa tende a ser mais génerica, assim como mostra o exemplo acima. Interfaces não coesas têm baixo reuso, e quando o desenvolvedor não tem a experiência necessária para perceber e resolver o problema, ele acaba por complicar ainda mais o projeto de classes.
+
+Aplicando o Interface Segregation Principle (ISP) na classe `ModeloCorreto `, podemos refatorar o código da seguinte forma:
 
 ```kotlin
 class ModeloCorreto {
@@ -291,61 +338,87 @@ class ModeloCorreto {
 }
 ```
 
+Note que no exemplo acima, a classe `RobotNotAntennas ` agora possui as ações, ou métodos,  mais condizentes com as características da classe dele.
+
+**O uso do Princípio da Segregação de Interfaces gera os seguintes benefícios, sendo eles:**
+
+- **Interfaces coesas:** interfaces coesas são aquelas cujos comportamentos são simples e bem definidos. Ela também possue apenas uma única responsabilidade (elas seguem o Princípio da Responsabilidade Única). Suas implementações não precisam fazer “gambiarras” para se adaptarem. 
+- **Maior reuso.**
+- **Mais estáveis.**
+- **Facilidade de manutenção e eficiência no código.**
+
 ## Dependency Inversion Principle
 
 > Princípio da Inversão de Dependência — ***Dependa de abstrações e não de implementações***.
 
 ![](src/imagens/DIP.png)
 
+O *Dependency Inversion Principle*  é a base para termos um projeto com um excelente design orientado a objetos, focado no domínio e com um arquitetura flexível.
+
+De uma forma objetiva o princípio nos faz entender que sempre devemos depender de abstrações e não das implementações, afinal de contas, as abstrações mudam menos e facilitam a mudança de comportamento e as evoluções do código. 
+
+**Veja um exemplo:**
+
 ```kotlin
 class ModeloErrado {
 
-    class Robot{
+  class Robot{
 
         private val cutterArm:CutterArm = CutterArm()
 
-        fun cutPizza(){
-            cutterArm.cut()
-            println("I cut pizza with my pizza cutter arm")
-        }
+        fun cutPizza() = cutterArm.cut()
 
     }
+
     class CutterArm{
 
-        fun cut(){}
+        fun cut() = println("I cut pizza with my pizza cutter arm")
 
     }
 
 }
 ```
 
-No exemplo, podemos perceber que além de quebrar outros princípios do SOLID, a classe concreta *Interruptor* depende de uma outra classe concreta *Ventilador*. O Interruptor deveria ser capaz de acionar qualquer dispositivo independente de ser um ventilador uma lâmpada ou até mesmo um carro.
+No exemplo acima, podemos perceber que a classe `Robot` depende de uma outra classe — a classe  `CutterArm` . A classe  `Robot` deveria ser capaz de usar qualquer ferramenta independente de ser um braço cortador ou até mesmo um braço de faça.
+
+**A violação do Dependency Inversion Principle Principle pode gerar alguns problemas, sendo eles:**
+
+- **Alto acoplamento**: a partir do momento em que uma classe possui muitas dependências, ***todas elas podem propagar problemas para a classe principal***. A classe, quando possui muitas dependências, ***torna-se muito frágil, fácil de quebrar***.
+- **Dificuldade de reuso:** o reuso dessas classes também fica cada vez mais difícil, afinal, se quisermos reutilizar uma determinada classe em outro lugar, ***precisaremos levar junto todas suas dependências***. Lembre-se também que as dependências de uma classe podem ter suas próprias dependências, gerando uma grande árvore de classes que devem ser levadas junto.
+
+Aplicando o Dependency Inversion Principle (DIP) na classe `ModeloCorreto `, podemos refatorar o código da seguinte forma:
 
 ```kotlin
 class ModeloCorreto {
 
-    interface Tool{
-
+ interface Tool{
         fun cutterArm()
         //Example
         //fun knifeArm()
     }
 
-    class Robot{
+    class Robot(private val tool:Tool){
 
         fun print() = println("I cut with any tool given to me")
+        fun cutPizza() = tool.cutterArm()
+        //Example
+        //fun cutPizza() = tool.knifeArm()
 
-        class Cutter(private val tool:Tool){
-
-            fun cutPizza() = tool.cutterArm()
-            //Example
-            //fun cutPizza() = tool.knifeArm()
-
-        }
     }
 
 }
 ```
+Note que no exemplo acima, a classe `Robot ` não tem a mínima ideia de qual tipo de ferramenta ele irá utilizar. Dessa forma, não estamos mais violando o **Princípio da Inversão de Dependência**, ambas as classes estão desacopladas e dependendo de uma abstração. Além disso, estamos favorecendo a reusabilidade do código e como *“bônus”* também estamos respeitando o **Princípio da Responsabilidade Única** e o **Princípio Aberto-Fechado**.
+
+**O uso do Princípio da Inversão de Dependência gera os seguintes benefícios, sendo eles:**
+
+- **Interfaces coesas:** interfaces coesas são aquelas cujos comportamentos são simples e bem definidos. Ela também possue apenas uma única responsabilidade (elas seguem o Princípio da Responsabilidade Única). Suas implementações não precisam fazer “gambiarras” para se adaptarem. 
+- **Maior reuso.**
+- **Mais estáveis.**
+- **Facilidade de manutenção e eficiência no código.**
+
+> A ideia é: sempre que uma classe for depender de outra, ela deve ***depender sempre de outro módulo mais estável do que ela mesma***.
+
 ## Diagramas de Classe
 
 - **Single Responsibility Principle**

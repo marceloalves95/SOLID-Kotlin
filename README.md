@@ -13,7 +13,7 @@ Projeto de estudo baseado nos principais conceitos sobre o SOLID.
 
 ## Os princípios do SOLID
 
-1. S **— Single Responsiblity Principle** (Princípio da Responsabilidade Única)
+1. S **— Single Responsibility Principle** (Princípio da Responsabilidade Única)
 2. O **— Open-Closed Principle** (Princípio Aberto-Fechado)
 3. L **— Liskov Substitution Principle** (Princípio da Substituição de Liskov)
 4. I **— Interface Segregation Principle** (Princípio da Segregação da Interface)
@@ -46,7 +46,27 @@ class ModeloErrado {
 }
 ```
 
-A classe *Pedido* viola o Single Responsiblity Principle (SRP) porque realiza 3 tipos distintos de tarefas. Além de lidar com as informações do pedido, ela também é responsável pela exibição e manipulação dos dados. Lembre-se, o princípio da responsabilidade única preza que *uma classe deve ter um, e somente um, motivo para mudar***.**
+A classe `Robot ` viola o Single Responsiblity Principle (SRP) porque realiza 4 tipos distintos de tarefas, ou seja, ela executa ações diferentes em uma mesma classe. Lembre-se, o princípio da responsabilidade única preza que *uma classe deve ter um, e somente um, motivo para mudar*.  
+
+**A violação do Single Responsibility Principle pode gerar alguns problemas, sendo eles:**
+
+- **Falta de coesão** — uma classe não deve assumir responsabilidades que não são suas. Classes não coesas têm uma grande chance de terem defeitos. Toda classe que é não coesa ***não para de crescer nunca***.
+- **Alto acoplamento** — Mais responsabilidades geram um maior nível de dependências, deixando o sistema engessado e frágil para alterações;
+- **Dificuldades na implementação de testes automatizados** — É difícil de *“mockar”* *esse tipo de classe;*
+- **Dificuldades para reaproveitar o código.**
+
+> **Mock ou Mockar :** Em desenvolvimento de software são objetos que simulam o comportamento de objetos reais de forma controlada. São normalmente criados para testar o comportamento de outros objetos. 
+
+> **Coesão:** uma classe coesa é aquela que possui uma única responsabilidade. Além disso, elas são vitais em um sistema orientado a objetos. 
+
+> **Acoplamento:** É a união ou ligação entre dois ou mais corpos, formando um único conjunto. Esse corpo pode ser representado por classes, entidades, métodos, componentes, tabelas etc. Quando falamos, por exemplo, de relacionamento entre Classes, Tabelas, Domínios, Sub-Sistemas, Casos de Uso etc. estamos falando de acoplamento. Podemos afirmar que no contexto de um software *qualquer relacionamento gera acoplamento*.
+>
+> - **Baixo Acoplamento** — Quando um sistema possui entre seus componentes uma relação de **interdependência fraca**, significa que a **dependência entre seus componentes** é baixa, ou seja, estão acoplados, **mas fracamente acoplados**. 
+> - **Alto Acoplamento** — Quando um sistema possui entre seus componentes uma relação de **interdependência forte**, significa que a **dependência entre seus componentes** é alta, ou seja, estão acoplados, **mas fortemente acoplados**.
+>
+>  
+
+Aplicando o Single Responsiblity Principle (SRP) na classe `Robot `, podemos refatorar o código da seguinte forma:
 
 ```kotlin
 class ModeloCorreto {
@@ -71,11 +91,28 @@ class ModeloCorreto {
 }
 ```
 
+Note que no exemplo acima que agora temos 4 classes, cada uma cuidando da sua responsabilidade.
+
+> Esse princípio é um dos mais importantes, ele acaba sendo a base para outros princípios e padrões, além disso ela aborda temas como acoplamento e coesão, características que todo código orientado a objetos deveria ter.
+
+**O uso do princípio do Single Responsibility Principle gera os seguintes benefícios, sendo eles:**
+
+- **Uso de classes coesas:** Classes coesas tendem a ter menos código, são mais simples de serem mantidas, são menos suscetíveis a problemas, o seu reuso é mais fácil e a chance de propagarem problemas para outras classes é menor. 
+- **Ela também pode ser aplicada para métodos e funções:** tudo que é responsável por executar uma ação, deve ser responsável por apenas aquilo que se propõe a fazer. 
+
+> Não ache que você conseguirá escrever classes coesas o tempo todo, e de primeira. Escrever código de qualidade é sempre incremental; você modela, observa seu modelo, aprende com ele e o melhora.
+
+Aplicando esse princípio, automaticamente você estará escrevendo um código mais limpo e de fácil manutenção.
+
 ## Open-Closed Principle 
 
 > Princípio do Aberto-Fechado — ***Você deve ser capaz de estender um comportamento de uma classe sem a necessidade de modificá-lo***.
 
 ![](src/imagens/OCP.png)
+
+Esse princípio diz que *você deve ser capaz de estender um comportamento de uma classe sem a necessidade de modificá-lo*, ou seja, quando novos comportamentos e recursos precisam ser adicionados no software, devemos estender e não alterar o código fonte original.
+
+**Veja um exemplo:**
 
 ```kotlin
 class ModeloErrado {
@@ -100,7 +137,14 @@ class ModeloErrado {
 }
 ```
 
+A classe `Work `precisa verificar a classe `Robot ` para aplicar qual tipo de trabalho o robô faz. Supondo que o robô faça mais do que só cortar e pintar, obviamente seria necessário modificar essa classe! Sendo assim, estaríamos quebrando o princípio do Open-Closed Principle.
 
+**A violação do Open-Closed Principle pode gerar alguns problemas, sendo eles:**
+
+- **Alteração de classe:** Quando alterarmos uma classe já existente para adicionar um novo comportamento, corremos um sério risco de introduzir bugs em algo que já estava funcionando.
+- **Classes altamente testáveis:** A partir do momento em que a classe deixa clara todas as suas dependências, e possibilita a troca delas, criamos classes facilmente extensíveis.
+
+Aplicando o Open-Closed Principle (OCP) na classe `ModeloCorreto `, podemos refatorar o código da seguinte forma:
 
 ```kotlin
 class ModeloCorreto {
@@ -121,6 +165,8 @@ class ModeloCorreto {
     
 }
 ```
+
+A classe `Robot` não precisa saber quais são os tipos de trabalho do robô. Ela será capaz de executar diretamente as ações dos tipos de trabalho do robô (que é cortar e pintar, respectivamente) — *desde que ele implemente a interface* `Work` *—* sem qualquer necessidade de alteração do seu código fonte. Dessa forma, acabamos de implementar o Open-Closed Principle em nosso código.
 
 ## Liskov Substitution Principle
 
@@ -300,17 +346,40 @@ class ModeloCorreto {
 
 }
 ```
-## O que você deve ou não fazer
+## Diagramas de Classe
 
-**Outros Exemplos:**
+- **Single Responsibility Principle**
 
-| **Princípios** | **O que você NÃO deve fazer**🚫 | **O que você DEVE fazer**✅ |
-| :------------: | :----------------------------: | :------------------------: |
-|     **S**      |             Errado             |           Certo            |
-|     **O**      |             Errado             |           Certo            |
-|     **L**      |             Errado             |           Certo            |
-|     **I**      |             Errado             |           Certo            |
-|     **D**      |             Errado             |           Certo            |
+  | ![](src/imagens/uml/SRP-Robot1.png) | **Errado**🚫 |
+  | :---------------------------------: | :---------: |
+  | ![](src/imagens/uml/SRP-Robot2.png) | **Certo**✅  |
+
+- **Open-Closed Principle**
+
+  | ![](src/imagens/uml/OCP-Robot1.png) | **Errado**🚫 |
+  | :---------------------------------: | :---------: |
+  | ![](src/imagens/uml/OCP-Robot2.png) | **Certo**✅  |
+
+- **Liskov Substitution Principle**
+
+  | ![](src/imagens/uml/LSP-Robot1.png) | **Errado**🚫 |
+  | :---------------------------------: | :---------: |
+  | ![](src/imagens/uml/LSP-Robot2.png) | **Certo**✅  |
+
+- **Interface Segregation Principle**
+
+  | ![](src/imagens/uml/ISP-Robot1.png) | **Errado**🚫 |
+  | :---------------------------------: | :---------: |
+  | ![](src/imagens/uml/ISP-Robot2.png) | **Certo**✅  |
+
+- **Dependency Inversion Principle**
+
+  | ![](src/imagens/uml/DIP-Robot1.png) | **Errado**🚫 |
+  | :---------------------------------: | :---------: |
+  | ![](src/imagens/uml/DIP-Robot2.png) | **Certo**✅  |
+
+   
+
 
 
 ## Fontes

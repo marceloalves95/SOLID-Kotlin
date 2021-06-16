@@ -147,7 +147,6 @@ A classe `Work `precisa verificar a classe `Robot ` para aplicar qual tipo de tr
 **A violação do Open-Closed Principle pode gerar alguns problemas, sendo eles:**
 
 - **Alteração de classe:** quando alterarmos uma classe já existente para adicionar um novo comportamento, corremos um sério risco de introduzir bugs em algo que já estava funcionando.
-- **Classes altamente testáveis:** a partir do momento em que a classe deixa clara todas as suas dependências, e possibilita a troca delas, criamos classes facilmente extensíveis.
 
 Aplicando o Open-Closed Principle (OCP) na classe `ModeloCorreto`, podemos refatorar o código da seguinte forma:
 
@@ -176,6 +175,7 @@ A classe `Robot` não precisa saber quais são os tipos de trabalho do robô. El
 **O uso do Princípio Aberto-Fechado gera os seguintes benefícios, sendo eles:**
 
 - **Extensibilidade:** quando termos uma nova funcionalidade ou comportamento, não precisaremos alterar a classe já existente, e sim estendê-la. Com isso mantemos o código original confiável e intacto, e criamos um código com design duradouro, de qualidade e manutenibilidade altas.
+- **Classes altamente testáveis:** a partir do momento em que a classe deixa clara todas as suas dependências, e possibilita a troca delas, criamos classes facilmente extensíveis.
 - **Maior uso de abstrações:** quando usamos abstração no nosso código, ela permite que toda a mágica aconteça. Se temos abstrações bem definidas, conseguimos de forma fácil estender os métodos da nossa aplicação. O conceito do Open-Closed Principle indica principalmente o uso da herança para praticarmos a extensão dos métodos.
 
 > **Abstração:** trata-se da capacidade de extrair dos personagens ou dos itens presentes no contexto, suas principais características, criando, dessa forma, objetos. Por exemplo: o que um papagaio e um cachorro têm em comum? Todos eles são animais. Sendo assim, a classe abstrata é Animal.
